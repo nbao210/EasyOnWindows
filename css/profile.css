@@ -1,0 +1,56 @@
+#user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+#user-info span {
+    font-size: 16px;
+    color: #0073e6; /* Thay đổi màu của tên tài khoản */
+    font-weight: bold;
+}
+
+#user-info {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+#google-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: white;
+    color: #d9534f; /* Màu chữ đỏ */
+    border: 2px solid #d9534f; /* Viền đỏ */
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 70px;
+    height: 50px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Thêm kiểu cho logo */
+.google-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Hiệu ứng khi hover */
+#google-login:hover {
+    background-color: #d9534f; /* Màu nền khi hover */
+    color: white; /* Màu chữ khi hover */
+    border-color: #c9302c; /* Viền đỏ đậm khi hover */
+}
+
+#google-login:focus {
+    outline: none;
+}

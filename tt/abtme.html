@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+</head>
+<body>
+    <div class="profile2">
+        <div class="nav-tabs">
+            <a href="javascript:void(0);" class="tab-link" onclick="showTab('whoami')">Who am I</a>
+            <a href="javascript:void(0);" class="tab-link" onclick="showTab('hobbies')">Hobbies</a>
+            <a href="javascript:void(0);" class="tab-link" onclick="showTab('social')">Contact me</a>
+        </div>
+        <div class="tab-content">
+            <div id="whoami" class="tab-pane">
+                <p>Thông tin về tôi: Tôi là một lập trình viên đam mê xây dựng ứng dụng web và khám phá công nghệ mới.</p>
+            </div>
+            <div id="hobbies" class="tab-pane" style="display:none;">
+                <p>Sở thích của tôi bao gồm nghe nhạc, chơi game, và tìm hiểu về vũ trụ.</p>
+            </div>
+            <div id="social" class="tab-pane" style="display:none;">
+                <div class="social-links">
+                    <a href="https://discord.com" class="social-link" target="_blank"><ion-icon name="logo-discord"></ion-icon>
+                        Windows 10X - Second
+                    </a>
+                    <a href="https://facebook.com" class="social-link" target="_blank"><ion-icon name="logo-facebook"></ion-icon>
+                        Comming soon...
+                    </a>
+                    <a href="https://youtube.com" class="social-link" target="_blank"> <ion-icon name="logo-Youtube"></ion-icon>
+                        Easy On Windows
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile">
+        <img src="https://via.placeholder.com/150" alt="Profile Picture">
+        <h2>Nguyễn Gia Bảo</h2>
+        <p>
+            Xin chào, tôi là một lập trình viên trẻ, cảm ơn vì đã ở đây!
+            <br> Thằng Phốt Làn kia trả nợ t 300k m ơi 2 năm rồi
+        </p>
+    </div>
+
+    <script>
+        // Hàm hiển thị tab mặc định là 'Tôi là ai'
+        function showTab(tabId) {
+            // Ẩn tất cả các tab content
+            var tabs = document.querySelectorAll('.tab-pane');
+            tabs.forEach(function(tab) {
+                tab.style.display = 'none';
+            });
+            
+            // Hiển thị tab được chọn
+            var activeTab = document.getElementById(tabId);
+            activeTab.style.display = 'block';
+
+            // Xóa lớp "active" khỏi tất cả các tab link
+            var tabLinks = document.querySelectorAll('.tab-link');
+            tabLinks.forEach(function(link) {
+                link.classList.remove('active');
+            });
+
+            // Thêm lớp "active" vào tab được chọn
+            var activeLink = document.querySelector(`.tab-link[onclick="showTab('${tabId}')"]`);
+            activeLink.classList.add('active');
+        }
+
+        // Hiển thị tab "Tôi là ai" khi trang được tải
+        window.onload = function() {
+            showTab('whoami');
+        }
+    </script>
+</body>
+</html>

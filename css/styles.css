@@ -1,0 +1,418 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('f/ubt.ttf') format('truetype');
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Căn giữa logo */
+    background-color: white;
+    color: white;
+    padding: 10px 0;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+header img.logo {
+    height: 80px; /* Hoặc giá trị tùy chỉnh cho kích thước logo */
+    width: auto; /* Đảm bảo giữ tỷ lệ khung hình */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 0; 
+    min-height: 100vh;
+}
+
+
+header img {
+    height: 50px;
+    margin-left: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 100px 100px 100px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: black;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #d1ccc2;
+}
+
+.container {
+    display: flex;
+}
+
+.main-content {
+    width: 80%;
+    padding: 15px;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #4fc3f7;
+    padding: 15px;
+    display: flex;
+    margin: 10px;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar img {
+    width: 30px; /* Thay đổi kích thước logo social media */
+    height: 30px; /* Thiết lập chiều cao để logo đều nhau */
+    object-fit: cover;
+    margin: 5px; /* Giữ khoảng cách giữa các logo */
+    transition: transform 0.3s; /* Hiệu ứng zoom khi hover */
+    display: inline-block; /* Hiển thị chúng cùng hàng */
+}
+
+/* Khi màn hình nhỏ hơn 768px, ẩn sidebar */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Ẩn sidebar */
+    }
+}
+
+/* Bạn có thể tùy chỉnh các điểm dừng khác nhau, ví dụ cho điện thoại di động */
+@media (max-width: 480px) {
+    .sidebar {
+        display: none; /* Ẩn sidebar cho màn hình rất nhỏ */
+    }
+}
+
+.social {
+    display: inline-block;
+    margin: 5px;
+    transition: transform 0.1s ease;
+}
+
+.social:hover {
+    transform: scale(1.05); 
+}
+
+.news-item {
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.news-item h2 {
+    color: #0288d1;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.news-item p {
+    color: #555;
+}
+
+.latest-news {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.latest-news h2 {
+    font-size: 1em; /* Giảm kích thước chữ */
+    white-space: nowrap; /* Ngăn không cho xuống dòng */
+    overflow: hidden; /* Ẩn nội dung vượt quá */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm nếu tiêu đề quá dài */
+}
+
+.latest-news .news-item {
+    width: 90%; /* Giảm chiều rộng của các bài viết mới trong sidebar */
+    margin-bottom: 10px;
+}
+
+.news-title-overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+.news-image-container {
+    position: relative;
+    max-height: 300px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.news-image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.zoom-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zoom-effect:hover {
+    transform: scale(1.02);
+    box-shadow: 5px 05px 5px rgb(193, 230, 255);
+}
+
+footer {
+    background-color: #0288d1; /* Màu nền giống header */
+    color: white; /* Màu chữ */
+    text-align: center; /* Căn giữa nội dung */
+    padding: 10px 0; /* Đệm trên và dưới */
+    position: relative; /* Để footer không bị lỗi vị trí */
+    bottom: 0; /* Giúp footer nằm ở cuối trang */
+    width: 100%; /* Chiều rộng 100% */
+    margin-top: auto;
+}
+
+.downapp {
+    margin-top: 0%;
+    width: 100%; /* Thay đổi nếu bạn muốn nó nhỏ lại */
+    max-width: 270px; /* Thay đổi chiều rộng tối đa theo ý muốn */
+    height: auto; /* Để đảm bảo chiều cao tự động */
+    border-radius: 0px; /* Bo góc cho khung chứa */
+    margin-left: 0px;
+    padding-left: 0px; /* Căn chỉnh theo lề của "Bài viết mới nhất" */
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.downapp h2 {
+    font-size: 1em; /* Giảm kích thước chữ */
+    white-space: nowrap; /* Ngăn không cho xuống dòng */
+    overflow: hidden; /* Ẩn nội dung vượt quá */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm nếu tiêu đề quá dài */
+    margin: 0;
+    padding-left: 0;
+    text-align: left; /* Căn chỉnh tiêu đề sang trái */
+    color: #fff;
+}
+
+.downapp img {
+    width: 270px; /* Thay đổi kích thước cụ thể mà bạn muốn */
+    height: auto; /* Để đảm bảo giữ tỷ lệ khung hình */
+    border-radius: 0px; /* Bo góc cho ảnh */
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.zoomapp-effect {
+    transition: transform 0.3s ease;
+}
+
+.zoomapp-effect:hover {
+    transform: scale(1.02);
+}
+
+.zoomhead-effect {
+    transition: transform 0.1s ease;
+}
+
+.zoomhead-effect:hover {
+    transform: scale(1.05);
+}
+
+.zoom-effect:ion-icon {
+    color: #000000;
+    font-size: 1.5em;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+}
+
+.discord {
+    display: flex;
+    margin-left: 10px;
+}
+
+.discord h2 {
+    font-size: 1em; /* Giảm kích thước chữ */
+    white-space: nowrap; /* Ngăn không cho xuống dòng */
+    overflow: hidden; /* Ẩn nội dung vượt quá */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm nếu tiêu đề quá dài */
+    margin-top: 20px;
+    margin-left: 50px;
+    font-family: 'CustomFont', sans-serif;
+}
+
+/* CSS cho các liên kết */
+.discord a {
+    color: #00eeff; /* Màu liên kết riêng cho phần discord */
+    text-decoration: none; /* Xóa gạch dưới */
+}
+
+.discord a:hover {
+    color: #00ff00; /* Màu khi di chuột */
+    text-decoration: underline;
+}
+/*Đến phần animation rồi đây hehe */
+ul
+{
+    position: relative;
+    display: flex;
+    gap: 25px;
+}
+ul li {
+    position: relative;
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    background: #ff7272;
+    border-radius: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: width 0.5s, box-shadow 0.5s;
+    overflow: hidden; /* Để tránh nội dung tràn */
+}
+ul li:hover
+{
+    width: 180px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+ul li::before
+{
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    background: linear-gradient(45deg,var(--i),var(--j));
+    opacity: 0;
+    transition: 0.5s;
+}
+ul li:hover::before
+{
+    opacity: 1;
+}
+ul li::after
+{
+    content: '';
+    position: static;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+    background: linear-gradient(45deg,var(--i),var(--j));
+    transition: 0.5s;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0;
+}
+ul li:hover::after
+{
+    opacity: 0.5;
+    justify-content: center;
+    align-items: center;
+}
+ul li ion-icon
+{
+    display: center;
+    color: #000000;
+    font-size: 1.5em;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+    margin: 13px;
+}
+ul li:hover ion-icon
+{
+    transform: scale(0);
+    color: #fff;
+    transition-delay: 0s;
+}
+ul li span {
+    position: absolute;
+    top: 28%; /* Căn giữa theo chiều dọc */
+    left: 25%; /* Căn giữa theo chiều ngang */
+    transform: translate(-50%, -50%); /* Điều chỉnh để căn giữa hoàn hảo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li .title {
+    color: #fff;
+    font-size: 1.0em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: scale(0); /* Ban đầu ẩn chữ */
+    transition: transform 0.5s;
+    transition-delay: 0s;
+    font-weight: bold;
+}
+
+ul li:hover .title {
+    transform: scale(1);
+    transition-delay: 0.25s;
+}
+
+
+.login {
+    margin-left: 15px;
+}
+/* Cho login */
+.logbox {
+    display: center;
+    background-color: #0288d1;
+    margin-left: 450px;
+    margin-right: 450px;
+    margin-top: 100px;
+    border-radius: 15px;
+}
+.logbox a {
+    color: rgb(255, 255, 255);
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.25em;
+}
+.logbox b {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: left;
+    font-size: 1em;
+}
+/*-----------------------------*/
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .discord h2 {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        display: none;
+    }
+}

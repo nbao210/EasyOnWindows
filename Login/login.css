@@ -1,0 +1,19 @@
+.loginpromt {
+    display: flex;
+    width: 25%;
+    height: 250px;
+    background-color: azure;
+    border-radius: 10pt;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    margin-left: 37.5%;
+    text-align: center;
+    flex-direction: column;
+}
+.loginpromt h1 {
+    font-size: 0.8em;
+    color: #333;
+    margin: 0;
+    font-style: none;
+}

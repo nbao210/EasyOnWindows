@@ -1,0 +1,477 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('f/ubt.ttf') format('truetype');
+}
+
+:root {
+    --primary-color: #0288d1;
+    --text-color: black;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    margin: 10px;
+    margin-left: 65px;
+
+}
+
+header img.logo {
+    height: 45px;
+    width: auto; /* Giữ tỷ lệ khung hình */
+}
+
+header img {
+    height: 50px;
+    margin-left: 20px;
+}
+
+/* Navigation Styles */
+/* Đảm bảo nav ẩn đi khi chưa bật */
+/* Menu ban đầu ẩn bên ngoài */
+nav {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Ẩn menu ra khỏi màn hình */
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    padding-top: 60px;
+    transition: transform 0.3s ease, left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    
+}
+
+/* Khi menu được hiển thị */
+nav.show {
+    left: 0; /* Menu trượt vào từ trái */
+}
+
+nav a {
+    display: block;
+    color: black;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Menu Icon */
+.menu-icon {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}
+
+.menu-button {
+    position: absolute;
+    top: 24px; /* Căn chỉnh khoảng cách so với đầu trang */
+    left: 15px; /* Căn chỉnh khoảng cách so với lề phải */
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: #0288d1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.menu-button ion-icon {
+    font-size: 24px;
+    color: white;
+}
+
+.menu-button:hover {
+    transform: scale(1.05);
+    background-color: #005c8d;
+}
+
+/* Sidebar */
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.main-content {
+    width: 80%;
+    padding: 15px;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #4fc3f7;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin: 5px;
+    transition: transform 0.3s;
+}
+
+.social {
+    display: inline-block;
+    margin: 5px;
+}
+
+.social:hover {
+    transform: scale(1.05);
+}
+
+/* News Item */
+.news-item {
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-item img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.news-item h2 {
+    color: #0288d1;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.news-item p {
+    color: #555;
+}
+
+.latest-news {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: #0288d1;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .news-item {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        display: none;
+    }
+}
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.close-button ion-icon {
+    color: #555;
+}
+
+/* Lớp phủ mờ khi menu mở */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Màu đen mờ */
+    z-index: 999; /* Đặt lớp phủ phía trên các phần tử khác */
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Hiệu ứng mờ dần */
+}
+
+/* Hiển thị lớp phủ khi menu mở */
+.overlay.show {
+    display: block;
+    opacity: 1;
+}
+button {
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    margin: 0;
+    overflow: visible;
+    text-transform: none;
+}
+button {
+    display: inline-block;
+    min-width: 120px;
+    padding: 4px 12px;
+    margin: 4px 0;
+    max-width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    text-overflow: clip;
+    touch-action: manipulation;
+    color: #000;
+    border: solid 2px transparent;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+button:hover,
+button:focus,
+button:active {
+    border-color: rgba(0, 0, 0, 0.4);
+}
+button:active {
+    border-color: transparent;
+}
+.content-flags {
+    margin: 32px auto 160px;
+}
+/* Modal styles */
+.modal {
+    display: none; /* Ẩn modal ban đầu */
+    position: fixed;
+    z-index: 1; /* Hiển thị modal trên các phần tử khác */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền tối mờ */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 400px;
+    margin: auto;
+  }
+  
+  .close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Đưa nút X vào góc trên bên phải */
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover, .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Logo trong modal */
+  .modal-logo {
+    width: 100px;
+    margin-bottom: 10px; /* Khoảng cách giữa logo và đoạn text */
+    height: auto;
+  }
+  .zoom-effect {
+    transition: transform 0.3s ease;
+}
+
+.zoom-effect:hover {
+    transform: scale(1.02);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+/* Giờ là phần sửa */
+ul
+{
+    position: relative;
+    display: flex;
+    gap: 25px;
+}
+ul li {
+    position: relative;
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    background: #ff7272;
+    border-radius: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: width 0.5s, box-shadow 0.5s;
+    overflow: hidden; /* Để tránh nội dung tràn */
+}
+ul li:hover
+{
+    width: 180px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+ul li::before
+{
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    background: linear-gradient(45deg,var(--i),var(--j));
+    opacity: 0;
+    transition: 0.5s;
+}
+ul li:hover::before
+{
+    opacity: 1;
+}
+ul li::after
+{
+    content: '';
+    position: static;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+    background: linear-gradient(45deg,var(--i),var(--j));
+    transition: 0.5s;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0;
+}
+ul li:hover::after
+{
+    opacity: 0.5;
+    justify-content: center;
+    align-items: center;
+}
+ul li ion-icon
+{
+    display: center;
+    color: #000000;
+    font-size: 1.5em;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+    margin: 13px;
+}
+ul li:hover ion-icon
+{
+    transform: scale(0);
+    color: #fff;
+    transition-delay: 0s;
+}
+ul li span {
+    position: absolute;
+    top: 28%; /* Căn giữa theo chiều dọc */
+    left: 25%; /* Căn giữa theo chiều ngang */
+    transform: translate(-50%, -50%); /* Điều chỉnh để căn giữa hoàn hảo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li .title {
+    color: #fff;
+    font-size: 1.0em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: scale(0); /* Ban đầu ẩn chữ */
+    transition: transform 0.5s;
+    transition-delay: 0s;
+    font-weight: bold;
+}
+
+ul li:hover .title {
+    transform: scale(1);
+    transition-delay: 0.25s;
+}
+.downapp {
+    margin-top: 0%;
+    width: 100%; /* Thay đổi nếu bạn muốn nó nhỏ lại */
+    max-width: 270px; /* Thay đổi chiều rộng tối đa theo ý muốn */
+    height: auto; /* Để đảm bảo chiều cao tự động */
+    border-radius: 0px; /* Bo góc cho khung chứa */
+    margin-left: 0px;
+    padding-left: 0px; /* Căn chỉnh theo lề của "Bài viết mới nhất" */
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.downapp h2 {
+    font-size: 1em; /* Giảm kích thước chữ */
+    white-space: nowrap; /* Ngăn không cho xuống dòng */
+    overflow: hidden; /* Ẩn nội dung vượt quá */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm nếu tiêu đề quá dài */
+    margin: 0;
+    padding-left: 0;
+    text-align: left; /* Căn chỉnh tiêu đề sang trái */
+    color: #fff;
+}
+
+.downapp img {
+    width: 270px; /* Thay đổi kích thước cụ thể mà bạn muốn */
+    height: auto; /* Để đảm bảo giữ tỷ lệ khung hình */
+    border-radius: 0px; /* Bo góc cho ảnh */
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.zoomapp-effect {
+    transition: transform 0.3s ease;
+}
+
+.zoomapp-effect:hover {
+    transform: scale(1.02);
+}

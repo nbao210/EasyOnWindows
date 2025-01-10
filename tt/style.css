@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://nbaoweb.firebaseapp.com/tt/back.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+.profile {
+    padding: 20px;
+    max-width: 800px;
+    background-color: rgba(51, 51, 51, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.profile2 {
+    padding: 20px;
+    width: 800px;
+    height: 400px;
+    background-color: rgba(51, 51, 51, 0.8);
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    overflow: hidden;
+}
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.tab-link {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.tab-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.tab-link:hover::after {
+    transform: scaleX(1);
+}
+.tab-link.active::after {
+    transform: scaleX(1);
+}
+.tab-link:hover {
+    color: #00bcd4;
+}
+.tab-content {
+    text-align: left;
+}
+.tab-pane {
+    display: none;
+}
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #555;
+}
+.profile h2 {
+    font-size: 2rem;
+    margin: 15px 0 10px;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+}
+.profile p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Social Media Links */
+/* Social Media Links */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch; /* Đảm bảo các nút có chiều cao và chiều rộng bằng nhau */
+    margin-top: 20px;
+}
+
+.social-link {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Căn giữa nội dung bên trong nút */
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid #fff; /* Viền trắng */
+    border-radius: 5px; /* Bo góc */
+    position: relative;
+    width: 95%; /* Đảm bảo chiều rộng của tất cả các nút bằng nhau */
+    height: 30px; /* Đảm bảo chiều cao của tất cả các nút bằng nhau */
+    overflow: hidden;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.social-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-out;
+}
+
+.social-link:hover::after {
+    transform: scaleX(1);
+}
+
+.social-link:hover {
+    color: black;
+    background-color: #fff; /* Màu nền khi hover */
+}
+
+.social-link:hover ion-icon {
+    color: black;
+}
+
+.social-link:hover .social-link-text {
+    color: black;
+}
+
+.social-link {
+    position: relative;
+}
+
+.social-link ion-icon {
+    font-size: 2rem;
+    color: white;
+    transition: color 0.3s;
+}

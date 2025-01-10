@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNew</title>
+    <link rel="stylesheet" href="styleswin(pre1.0.1.1).css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+</head>
+<body>
+    <header>
+        <div class="menu-button" id="menu-toggle">
+            <ion-icon name="ellipsis-vertical-outline" role="img" class="md hydrated"></ion-icon>
+        </div>
+        <div class="header-content">
+            <img src="../images/head.png" alt="TechNew Logo" class="logo">
+        </div>
+        <nav id="side-menu" class="hidden">
+            <div class="close-button" id="menu-close">
+                <ion-icon name="close-outline" role="img" class="md hydrated"></ion-icon>
+            </div>
+            <a href="index-win.html">Home</a>
+            <a href="windows-win.html">Windows</a>
+            <a href="nav3-win.html">Linux</a>
+            <a href="nav4-win.html">OS</a>
+            <a href="nav5-win.html">Software</a>
+            <a href="nav6-win.html">Developer</a>
+            <div class="container page-container">
+                <div class="content-flags">
+                    <button class="pushbutton btn-default" id="CheckForUpdate" onclick="checkForUpdate()">Check for Update</button>
+                </div>
+            </div>
+            
+            <div id="updateModal" class="modal">
+                <div class="modal-content">
+                  <span class="close-btn" onclick="closeModal()">×</span>
+                  <img src="../images/logo.png" alt="Trang Logo" class="modal-logo">
+                  <p>This is the latest version (prerelease-1.0.1.0)</p>
+                </div>
+              </div>
+        </nav>
+        <div id="user-info" style="display: inline-block; margin-left: 5px;">
+                <button id="google-login" class="login-btn">Đăng nhập</button>
+            </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <!-- Danh sách các tin tức -->
+            <div class="news-item zoom-effect">
+                <img src="images/sample2.jpg" alt="Tin 2">
+                <h2><a href="news/tin2.html">Tiêu đề tin 2</a></h2>
+                <p>Giới thiệu qua về tin 2...</p>
+            </div>
+            <div class="news-item zoom-effect">
+                <img src="images/sample1.jpg" alt="Tin 3">
+                <h2><a href="news/tin3.html">Tiêu đề tin 3</a></h2>
+                <p>Giới thiệu qua về tin 3...</p>
+            </div>
+            <div class="news-item zoom-effect">
+                <img src="images/sample2.jpg" alt="Tin 4">
+                <h2><a href="news/tin4.html">Tiêu đề tin 4</a></h2>
+                <p>Giới thiệu qua về tin 4...</p>
+            </div>
+            <!-- Thêm các bài viết khác tương tự -->
+        </div>
+
+        <div class="sidebar">
+            <ul>
+                <li style="--i: #ff5f6d; --j: #ffc371;">
+                    <a href="https://www.youtube.com/@wonggrow" target="_blank" title="Easy On Windows">
+                        <span class="title">Youtube</span>
+                        <ion-icon name="logo-youtube" role="img" class="md hydrated"></ion-icon>
+                    </a>
+                </li>
+            </ul>
+            <div class="downapp">
+                <h2>NGB Community - Applitication</h2>
+                <div class="zoomapp-effect">
+                    <img src="../images/apk.png" alt="Download now!">
+                </div>
+            </div>
+            <div class="latest-news">
+                <h2>Bài viết mới nhất</h2>
+                <div class="news-item">
+                    <img src="images/sample1.jpg" alt="Bài viết mới 1">
+                    <h2><a href="news/tin49.html">Tiêu đề bài viết mới 1</a></h2>
+                    <p>Mô tả ngắn cho bài viết mới 1...</p>
+                </div>
+                <div class="news-item">
+                    <img src="images/sample2.jpg" alt="Bài viết mới 2">
+                    <h2><a href="news/tin50.html">Tiêu đề bài viết mới 2</a></h2>
+                    <p>Mô tả ngắn cho bài viết mới 2...</p>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+
+<footer>
+    <div class="discord-container">
+        <div class="discord">
+            <iframe src="https://discord.com/widget?id=992690320015900692&amp;theme=dark" width="300" height="450" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            <div class="discord-text">
+                <h2>This app is under construction, it may not work properly.</h2>
+                <h2>You can also join our Discord server</h2>
+            </div>
+        </div>
+    </div>
+    <p>© 2024 Easy On Windows / TechNew. All rights reserved.</p>
+</footer>
+<script type="module" src="../Login/auth.js"></script>
+<script type="module" src="nav.js"></script>
+
+</body>

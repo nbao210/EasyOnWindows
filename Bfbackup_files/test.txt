@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNew</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+</head>
+<body>
+    <div id="header">
+        <script>
+            fetch("header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header").innerHTML = data;
+                })
+                .catch(error => console.error("Không thể tải header:", error));
+        </script>
+    </div>
+    <div class="container">
+        <div id="main-content">
+            <!-- Nội dung từ News/0106.html sẽ được tải vào đây -->
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                fetch("News/0106.html")
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        const tempDiv = document.createElement("div");
+                        tempDiv.innerHTML = data;
+                        const mainContent = document.getElementById("main-content");
+                        while (tempDiv.firstChild) {
+                            mainContent.appendChild(tempDiv.firstChild);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Không thể tải NEWS:", error);
+                        document.getElementById("main-content").innerHTML = "<p>Không thể tải nội dung. Vui lòng thử lại sau.</p>";
+                    });
+            });
+        </script>
+        <div class="sidebar">
+            <ul>
+                <li style="--i: #db0012; --j: #ffffff;">
+                    <a href="https://www.youtube.com/@wonggrow" target="_blank" title="Easy On Windows">
+                        <span class="title">YOUTUBE</span>
+                        <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                </li>
+            </ul>
+            <div class="downapp">
+                <h2>NGB Community for android</h2>
+                <div class="zoomapp-effect">
+                    <!-- <img src="images/apk.png" alt="Download now!"> -->
+                </div>
+            </div>
+            <div class="latest-news">
+                <h2>Bài viết mới đây</h2>
+                <div class="news-item">
+                    <img src="images/sample1.jpg" alt="Bài viết mới 1">
+                    <h2><a href="news/tin49.html">Tiêu đề bài viết mới 1</a></h2>
+                    <p>Mô tả ngắn cho bài viết mới 1...</p>
+                </div>
+                <div class="news-item">
+                    <img src="images/sample2.jpg" alt="Bài viết mới 2">
+                    <h2><a href="news/tin50.html">Tiêu đề bài viết mới 2</a></h2>
+                    <p>Mô tả ngắn cho bài viết mới 2...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="discord-container">
+            <div class="discord">
+                <iframe src="https://discord.com/widget?id=992690320015900692&theme=dark" width="300" height="450" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                <div class="discord-text">
+                    <h2>This site is under construction, it may not work properly.</h2>
+                    <h2>You can also join our Discord server</h2>
+                </div>
+            </div>
+        </div>
+        <p>© 2024 Easy On Windows / TechNew. All rights reserved.</p>
+    </footer>
+    <script type="module" src="Login/auth.js"></script>
+</body>
+</html>

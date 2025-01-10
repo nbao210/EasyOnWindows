@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNew</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="../images/logo.png" type="../image/png">
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+</head>
+<body>
+    <div id="header">
+        <script>
+            fetch("../header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header").innerHTML = data;
+                })
+                .catch(error => console.error("Không thể tải header:", error));
+        </script>
+    </div>
+  <div class="loginpromt">
+    <form id="signup-form">
+      <input type="email" style="margin: 5px;" id="signup-email" placeholder="Email" required />
+      <br>
+      <input type="password" style="margin: 5px;" id="signup-password" placeholder="Password" required />
+      <br>
+      <button type="submit" style="margin: 5px;">Sign Up</button>
+    </form>
+    <br>
+    <h1>Or another way? Login with Google</h1>
+    <button type="button" id="google-login" name="google-login" class="btn btn-danger btn-lg btn-block" style="width: 250px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/800px-Google_%22G%22_logo.svg.png" alt="Google Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+      Login with Google
+    </button>
+    <p id="signup-message"></p>  
+  </div>
+</body>
+<script type="module" src="../Login/auth.js"></script>
+</html>

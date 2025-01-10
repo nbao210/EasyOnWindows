@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNew - We are working on it!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+        }
+        .container2 {
+            text-align: center;
+            max-width: 600px;
+            padding: 0px;
+            margin-top: 0px; /* Thêm khoảng cách giữa hai container */
+        }
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+        a {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #2980b9;
+        }
+
+        .discord-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #7289da;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .discord-btn:hover {
+            background-color: #5b6eae;
+        }
+        .discord-btn img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        .animation {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            margin: 0 auto;
+            border-radius: 50%;
+            position: relative;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 20px; /* Khoảng cách từ trên */
+            right: 20px; /* Khoảng cách từ bên phải */
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle {
+            width: 40px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .toggle:before {
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background-color: white;
+            border-radius: 50%;
+            top: 1px;
+            left: 1px;
+            transition: transform 0.2s;
+        }
+
+        .toggle.active {
+            background-color: #4caf50;
+        }
+
+        .toggle.active:before {
+            transform: translateX(20px);
+        }
+
+        .toggle-label {
+            margin-left: 5px;
+            color: #333;
+            font-weight: bold;
+            font-size: 0.9rem; /* Kích thước chữ nhỏ hơn */
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-container">
+        <div class="toggle" id="language-toggle" onclick="toggleLanguage()"></div>
+        <span class="toggle-label" id="toggle-label">Tiếng Việt</span>
+    </div>
+
+    <div class="container">
+        <h1 id="main-title">Chờ một chút!</h1>
+        <div class="animation"></div>
+        <h2 id="main-subtitle">Hmmm... Có vẻ chưa xong rồi!</h2>
+        <p id="main-description">Chúng tôi vẫn trong quá trình phát triển trang này!</p>
+        <a href="/" id="home-link">Quay lại trang chủ, được chứ?</a>
+    </div>
+    <div class="container2">
+        <a href="https://discord.gg/9zAZ4s42AY" class="discord-btn" id="discord-link">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png" alt="Discord Logo">
+            Tham gia server discord của chúng tôi không?
+        </a>
+    </div>
+
+    <script>
+        let isVietnamese = true; // Biến để theo dõi ngôn ngữ hiện tại
+
+        function toggleLanguage() {
+            const titleElement = document.getElementById('main-title');
+            const subtitleElement = document.getElementById('main-subtitle');
+            const descriptionElement = document.getElementById('main-description');
+            const toggle = document.getElementById('language-toggle');
+            const toggleLabel = document.getElementById('toggle-label');
+            const homeLink = document.getElementById('home-link');
+            const discordLink = document.getElementById('discord-link');
+
+            if (isVietnamese) {
+                titleElement.innerText = "Coming Soon!";
+                subtitleElement.innerText = "Hmmm... It seems like we're not done yet!";
+                descriptionElement.innerText = "We're still developing this page!";
+                homeLink.innerText = "Back to homepage, okay?";
+                discordLink.innerHTML = '<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png" alt="Discord Logo"> Join our Discord server?';
+                toggle.classList.add('active');
+                toggleLabel.innerText = "English";
+            } else {
+                titleElement.innerText = "Chờ một chút!";
+                subtitleElement.innerText = "Hmmm... Có vẻ chưa xong rồi!";
+                descriptionElement.innerText = "Chúng tôi vẫn trong quá trình phát triển trang này!";
+                homeLink.innerText = "Quay lại trang chủ, được chứ?";
+                discordLink.innerHTML = '<img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png" alt="Discord Logo"> Tham gia server discord của chúng tôi không?';
+                toggle.classList.remove('active');
+                toggleLabel.innerText = "Tiếng Việt";
+            }
+
+            isVietnamese = !isVietnamese; // Đảo ngược trạng thái ngôn ngữ
+        }
+    </script>
+</body>
+</html>
